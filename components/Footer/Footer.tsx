@@ -26,12 +26,12 @@ export default function Footer() {
           <div className="max-w-lg">
 
             <h2 className="text-4xl lg:text-5xl font-bold">
-              Let's create something people remember.
+              Let&apos;s create something people remember.
             </h2>
 
             <p className="mt-6 text-white/70 leading-8 text-lg">
-              Whether it's a website, an idea, or a collaboration,
-  I'm always excited to build meaningful digital experiences.
+              Whether it&apos;s a website, an idea, or a collaboration,
+  I&apos;m always excited to build meaningful digital experiences.
             </p>
 
             <Link
@@ -51,7 +51,7 @@ export default function Footer() {
               transition-all
               "
             >
-              Let's Talk →
+              Let&apos;s Talk →
             </Link>
 
           </div>

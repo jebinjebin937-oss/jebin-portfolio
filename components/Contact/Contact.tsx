@@ -171,12 +171,12 @@ if (!nameRegex.test(name)) {
         </p>
 
         <h2 className="mt-5 text-4xl lg:text-5xl xl:text-6xl font-bold text-[#49225B]">
-          Let's Build Something Amazing.
+          Let&apos;s Build Something Amazing.
         </h2>
 
         <p className="mt-6 text-lg text-[#666] max-w-2xl leading-8">
           Have a project in mind, a job opportunity, or just want to say hello?
-          I'd love to hear from you.
+          I&apos;d love to hear from you.
         </p>
 
         <div className="w-24 h-1 bg-[#A56ABD] rounded-full mt-8"></div>
@@ -379,7 +379,7 @@ if (!nameRegex.test(name)) {
 </div>
 
       <p className="text-sm mt-1">
-        Thanks for reaching out. I'll get back to you soon.
+        Thanks for reaching out. I&apos;ll get back to you soon.
       </p>
     </motion.div>
   )}

@@ -58,6 +58,16 @@ tl.to(track, {
     };
   }, []);
 
+    const updateButtons = () => {
+  const container = mobileTrackRef.current;
+  if (!container) return;
+
+  const maxScroll = container.scrollWidth - container.clientWidth;
+
+  setCanScrollLeft(container.scrollLeft > 5);
+  setCanScrollRight(container.scrollLeft < maxScroll - 5);
+};
+
   useEffect(() => {
   const container = mobileTrackRef.current;
 
@@ -72,15 +82,7 @@ tl.to(track, {
   };
 }, []);
 
-  const updateButtons = () => {
-  const container = mobileTrackRef.current;
-  if (!container) return;
 
-  const maxScroll = container.scrollWidth - container.clientWidth;
-
-  setCanScrollLeft(container.scrollLeft > 5);
-  setCanScrollRight(container.scrollLeft < maxScroll - 5);
-};
 
 const scrollLeft = () => {
   const container = mobileTrackRef.current;

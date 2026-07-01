@@ -21,7 +21,7 @@ export default function AboutLeft() {
       </h2>
 </div>
       <p className="mt-8 text-base sm:text-lg leading-8 sm:leading-9 text-[#6E3482] text-center lg:text-left">
-        I'm Jebin, a Computer Science Engineering student passionate about
+        I&apos;m Jebin, a Computer Science Engineering student passionate about
         building modern web applications with clean user interfaces and
         meaningful user experiences.
       </p>
