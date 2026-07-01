@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Jebin showcasing modern web applications, UI/UX, and full-stack development projects.",
 
+  alternates: {
+    canonical: "https://jebin-portfolio-ten.vercel.app",
+  },
+
     openGraph: {
   title: "Jebin | Full Stack Developer",
 
