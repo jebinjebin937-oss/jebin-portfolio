@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
+
 import { projectsData } from "@/components/Projects/projectsData";
+import GalleryLightbox from "@/components/Projects/GalleryLightbox";
 
 type Props = {
   params: Promise<{
@@ -76,27 +78,20 @@ const nextProject =
         {/* Project Stats */}
 
 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+  {project.stats.map((stat, index) => (
+    <div
+      key={index}
+      className="bg-white rounded-2xl p-6 shadow-md text-center"
+    >
+      <h3 className="text-3xl font-bold text-[#49225B]">
+        {stat.value}
+      </h3>
 
-  <div className="bg-white rounded-2xl p-6 shadow-md text-center">
-    <h3 className="text-3xl font-bold text-[#49225B]">2025</h3>
-    <p className="text-[#666] mt-2">Built In</p>
-  </div>
-
-  <div className="bg-white rounded-2xl p-6 shadow-md text-center">
-    <h3 className="text-3xl font-bold text-[#49225B]">100%</h3>
-    <p className="text-[#666] mt-2">Responsive</p>
-  </div>
-
-  <div className="bg-white rounded-2xl p-6 shadow-md text-center">
-    <h3 className="text-3xl font-bold text-[#49225B]">Next.js</h3>
-    <p className="text-[#666] mt-2">Framework</p>
-  </div>
-
-  <div className="bg-white rounded-2xl p-6 shadow-md text-center">
-    <h3 className="text-3xl font-bold text-[#49225B]">TS</h3>
-    <p className="text-[#666] mt-2">Language</p>
-  </div>
-
+      <p className="text-[#666] mt-2">
+        {stat.label}
+      </p>
+    </div>
+  ))}
 </div>
 
         {/* Buttons */}
@@ -210,40 +205,10 @@ const nextProject =
     Project Gallery
   </h2>
 
-  <div className="grid md:grid-cols-2 gap-8 mt-10">
+  {project.gallery.length > 0 && (
+    <GalleryLightbox images={project.gallery} />
+  )}
 
-    {project.gallery.map((image, index) => (
-
-      <div
-        key={index}
-        className="
-          relative
-          h-[320px]
-          rounded-3xl
-          overflow-hidden
-          shadow-xl
-          group
-        "
-      >
-
-        <Image
-          src={image}
-          alt={`Screenshot ${index + 1}`}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="
-            object-cover
-            transition-transform
-            duration-500
-            group-hover:scale-105
-          "
-        />
-
-      </div>
-
-    ))}
-
-  </div>
 
 </section>
 
