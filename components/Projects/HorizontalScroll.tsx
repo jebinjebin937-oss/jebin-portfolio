@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -13,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HorizontalScroll() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const section = sectionRef.current;
@@ -54,6 +56,20 @@ tl.to(track, {
     };
   }, []);
 
+  const scrollLeft = () => {
+  mobileTrackRef.current?.scrollBy({
+    left: -350,
+    behavior: "smooth",
+  });
+};
+
+const scrollRight = () => {
+  mobileTrackRef.current?.scrollBy({
+    left: 350,
+    behavior: "smooth",
+  });
+};
+
   return (
     <section
       ref={sectionRef}
@@ -67,23 +83,109 @@ tl.to(track, {
             MY WORK
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold text-[#49225B]">
+          <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-[#49225B]">
             Featured Projects
           </h2>
 
         </div>
 
-        <div
-          ref={trackRef}
-          className="flex gap-10 px-[8vw] w-max"
-        >
-          {projectsData.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-            />
-          ))}
-        </div>
+        {/* Mobile & Tablet */}
+<div className="xl:hidden">
+
+  {/* Arrow Buttons */}
+  
+
+  <div className="relative flex items-center">
+
+  <button
+    onClick={scrollLeft}
+    className="
+      absolute
+      left-2
+      top-1/2
+      -translate-y-1/2
+      z-20
+      w-11
+      h-11
+      rounded-full
+      bg-white/80
+      backdrop-blur-md
+      hover:scale-110
+      transition-all
+      duration-300
+      shadow-lg
+      flex
+      items-center
+      justify-center
+    "
+  >
+    <ChevronLeft size={20} />
+  </button>
+
+  <div
+    ref={mobileTrackRef}
+    className="
+      flex
+      gap-6
+      overflow-x-auto
+      snap-x
+      snap-mandatory
+      px-6
+      pb-4
+      scrollbar-hide
+    "
+  >
+    {projectsData.map((project) => (
+      <div
+        key={project.slug}
+        className="snap-center shrink-0"
+      >
+        <ProjectCard project={project} />
+      </div>
+    ))}
+  </div>
+
+<button
+  onClick={scrollRight}
+  className="
+    absolute
+    right-2
+    top-1/2
+    -translate-y-1/2
+    z-20
+    w-11
+    h-11
+    rounded-full
+    bg-white/80
+    backdrop-blur-md
+    hover:scale-110
+    transition-all
+    duration-300
+    shadow-lg
+    flex
+    items-center
+    justify-center
+  "
+>
+  <ChevronRight size={20} />
+</button>
+
+</div>
+
+</div>
+
+{/* Desktop GSAP */}
+<div
+  ref={trackRef}
+  className="hidden xl:flex gap-10 px-[8vw] w-max"
+>
+  {projectsData.map((project) => (
+    <ProjectCard
+      key={project.slug}
+      project={project}
+    />
+  ))}
+</div>
 
       </div>
     </section>

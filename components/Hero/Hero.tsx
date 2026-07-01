@@ -6,18 +6,32 @@ import HeroRight from "./HeroRight";
 export default function Hero() {
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center pt-12 px-6"
-    >
+  id="home"
+  className="
+min-h-[80vh]
+xl:min-h-screen
+flex
+items-center
+px-6
+pt-28
+lg:pt-12
+"
+>
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 xl:gap-20 items-center">
 
-          <HeroLeft />
+  <div className="order-2 lg:order-1">
+    <HeroLeft />
+  </div>
 
-          <HeroRight />
+  <div className="order-1 lg:order-2">
+    <HeroRight />
+  </div>
+
+</div>
 
         </div>
-      </div>
+      
     </section>
   );
 }

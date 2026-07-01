@@ -11,7 +11,7 @@ export default function HeroRight() {
       transition={{ duration: 0.8 }}
       className="flex justify-center lg:justify-end"
     >
-      <div className="relative w-[430px] h-[560px]">
+      <div className="relative w-[320px] h-[430px] sm:w-[380px] sm:h-[500px] lg:w-[430px] lg:h-[560px]">
 
         {/* Background Layer 1 */}
 
@@ -57,10 +57,18 @@ export default function HeroRight() {
           className="
           absolute
 
-          top-12
-          left-12
-          right-12
-          bottom-12
+          top-8
+          left-8
+          right-8
+          bottom-8
+          sm:top-10
+          sm:left-10
+          sm:right-10
+          sm:bottom-10
+          lg:top-12
+          lg:left-12
+          lg:right-12
+          lg:bottom-12
 
           rounded-[32px]
 
@@ -101,11 +109,11 @@ export default function HeroRight() {
     "
   />
 
-  <ProfileImage size={240} />
+  <ProfileImage size={200} />
 
 </div>
 
-          <h3 className="mt-8 text-2xl font-bold text-[#49225B]">
+          <h3 className="mt-6 text-xl sm:text-2xl font-bold text-[#49225B]">
             Jebin J
           </h3>
 
@@ -115,7 +123,7 @@ export default function HeroRight() {
 
           <div
             className="
-            mt-8
+            mt-6
 
             px-5
             py-2

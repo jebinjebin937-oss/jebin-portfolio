@@ -38,7 +38,7 @@ export default function SkillCard({
         border-[#A56ABD]/20
         bg-white/40
         backdrop-blur-xl
-        p-8
+        p-6 lg:p-8
         shadow-[0_20px_50px_rgba(73,34,91,0.08)]
         transition-all
         duration-150
@@ -70,7 +70,7 @@ export default function SkillCard({
 
       {/* Title */}
 
-      <h3 className="mt-6 text-2xl font-bold text-[#49225B]">
+      <h3 className="mt-5 text-xl lg:text-2xl font-bold text-[#49225B]">
         {title}
       </h3>
 
@@ -112,11 +112,12 @@ export default function SkillCard({
         />
 
         <span
-          className="
-            text-[#6E3482]
-            font-medium
-          "
-        >
+  className="
+    text-[#6E3482]
+    text-sm lg:text-base
+    font-medium
+  "
+>
           {item.name}
         </span>
       </div>

@@ -10,9 +10,9 @@ export default function AboutCenter() {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.8 }}
-      className="flex justify-center -mt-12"
+      className="hidden lg:flex justify-center -mt-12"
     >
-      <div className="relative w-[340px] h-[340px]">
+      <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[340px] lg:h-[340px]">
 
         {/* Outer Ring */}
 

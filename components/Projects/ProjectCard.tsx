@@ -25,10 +25,12 @@ export default function ProjectCard({ project }: Props) {
 
           relative
 
-          w-[88vw]
+          w-[90vw]
           max-w-[1200px]
 
-          h-[72vh]
+          h-[65vh]
+          sm:h-[70vh]
+          lg:h-[72vh]
 
           rounded-[36px]
 
@@ -84,14 +86,14 @@ export default function ProjectCard({ project }: Props) {
             left-0
             right-0
 
-            p-10
+            p-6 sm:p-8 lg:p-10
           "
         >
-          <h2 className="text-5xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             {project.title}
           </h2>
 
-          <p className="mt-3 text-white/80 max-w-xl">
+          <p className="mt-3 text-sm sm:text-base text-white/80 max-w-xl">
             {project.description}
           </p>
 
@@ -100,8 +102,8 @@ export default function ProjectCard({ project }: Props) {
               <span
                 key={item}
                 className="
-                  px-4
-                  py-2
+                  px-3 sm:px-4
+                  py-1.5 sm:py-2
 
                   rounded-full
 
@@ -125,11 +127,15 @@ export default function ProjectCard({ project }: Props) {
           className="
             absolute
 
-            top-8
-            right-8
+            top-5
+            right-5
+            sm:top-8
+            sm:right-8
 
-            w-14
-            h-14
+            w-12
+            h-12
+            sm:w-14
+            sm:h-14
 
             rounded-full
 
@@ -147,7 +153,7 @@ export default function ProjectCard({ project }: Props) {
             group-hover:rotate-45
           "
         >
-          <ArrowUpRight className="text-white" size={28} />
+          <ArrowUpRight className="text-white" size={22} />
         </div>
       </div>
     </Link>

@@ -9,17 +9,17 @@ import {
 const socials = [
   {
     icon: FaGithub,
-    href: "https://github.com/YOUR_USERNAME",
+    href: "https://github.com/jebinjebin937-oss",
     label: "GitHub",
   },
   {
     icon: FaLinkedinIn,
-    href: "https://linkedin.com/in/YOUR_USERNAME",
+    href: "https://linkedin.com/in/jebin-j-cse",
     label: "LinkedIn",
   },
   {
     icon: FaEnvelope,
-    href: "mailto:youremail@example.com",
+    href: "mailto:jebinjebin937@example.com",
     label: "Email",
   },
 ];

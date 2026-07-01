@@ -32,7 +32,7 @@ export default function AboutRight() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.8 }}
-      className="grid md:grid-cols-2 gap-6"
+      className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6"
     >
       {details.map((item, index) => (
         <motion.div
@@ -50,7 +50,7 @@ export default function AboutRight() {
             backdrop-blur-xl
             border
             border-[#A56ABD]/20
-            p-5
+            p-4 sm:p-5
             transition-all
             duration-300
             hover:-translate-y-1
