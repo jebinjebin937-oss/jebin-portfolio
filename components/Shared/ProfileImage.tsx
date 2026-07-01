@@ -25,7 +25,7 @@ export default function ProfileImage({
         priority
         sizes="(max-width: 768px) 90vw, 40vw"
         fill
-        className="object-cover"
+        className="object-[center_15%] object-cover"
       />
     </div>
   );
