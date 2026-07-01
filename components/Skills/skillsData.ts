@@ -1,8 +1,12 @@
 import {
   FaReact,
   FaNodeJs,
-  FaPython,
   FaGitAlt,
+  FaGithub,
+  FaNpm,
+  FaHtml5,
+  FaCss3Alt,
+  FaCode,
 } from "react-icons/fa";
 
 import {
@@ -11,21 +15,33 @@ import {
   SiTailwindcss,
   SiExpress,
   SiMongodb,
-  SiFirebase,
-  SiOpencv,
+  SiJavascript,
+  
 } from "react-icons/si";
 
+import { VscVscode } from "react-icons/vsc";
+
 export const skills = [
-  {
-    title: "Frontend",
-    icon: FaReact,
-    items: [
-      { name: "React", icon: FaReact },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-    ],
-  },
+{
+  title: "Core Technologies",
+  icon: FaCode,
+  items: [
+    { name: "HTML5", icon: FaHtml5 },
+    { name: "CSS3", icon: FaCss3Alt },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+  ],
+},
+
+{
+  title: "Frameworks & Libraries",
+  icon: FaReact,
+  items: [
+    { name: "React", icon: FaReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+  ],
+},
 
   {
     title: "Backend",
@@ -42,17 +58,17 @@ export const skills = [
     icon: SiMongodb,
     items: [
       { name: "MongoDB", icon: SiMongodb },
-      { name: "Firebase", icon: SiFirebase },
     ],
   },
 
   {
-    title: "AI / ML",
-    icon: FaPython,
-    items: [
-      { name: "Python", icon: FaPython },
-      { name: "YOLOv5", icon: FaGitAlt },
-      { name: "OpenCV", icon: SiOpencv },
-    ],
-  },
+  title: "Tools",
+  icon: FaGitAlt,
+  items: [
+    { name: "Git", icon: FaGitAlt },
+    { name: "GitHub", icon: FaGithub },
+    { name: "VS Code", icon: VscVscode },
+    { name: "npm", icon: FaNpm },
+  ],
+},
 ];

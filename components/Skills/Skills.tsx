@@ -30,8 +30,7 @@ export default function Skills() {
           </h2>
 
           <p className="mt-6 text-[#6E3482] max-w-2xl mx-auto">
-            Technologies I use to build modern web applications and AI-powered
-            solutions.
+            Technologies I use to build modern, responsive, and scalable web applications.
           </p>
         </motion.div>
 

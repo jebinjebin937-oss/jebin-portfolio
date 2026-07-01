@@ -4,8 +4,8 @@ const technologies = [
   "React",
   "Next.js",
   "TypeScript",
-  "Node.js",
-  "Python",
+  "Tailwind CSS",
+  "MongoDB",
 ];
 
 export default function TechStack() {

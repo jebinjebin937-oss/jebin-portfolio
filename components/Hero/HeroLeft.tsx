@@ -44,14 +44,14 @@ useEffect(() => {
       {/* Subtitle */}
 
       <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-[#6E3482] text-center lg:text-left">
-        Creative Developer & AI Enthusiast
+        Full Stack Developer | Building Modern Web Experiences
       </h2>
 
       {/* Description */}
 
       <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg leading-7 sm:leading-8 text-[#6E3482] text-center lg:text-left">
-        I build modern web applications with clean UI,great user experience, and AI-powered solutions.
-        Passionate about creating products people enjoy using.
+        I build modern web applications with clean UI, great user experience, and scalable solutions.
+Passionate about creating products people enjoy using.
       </p>
 
       {/* Buttons */}

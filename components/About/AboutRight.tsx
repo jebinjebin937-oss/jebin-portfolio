@@ -5,23 +5,26 @@ import { motion } from "framer-motion";
 const details = [
   {
     title: "Education",
-    value: "B.E Computer Science",
-    sub: "Final Year • 2026",
+    value: "Bachelor of Technology",
+    sub: "Computer Science & Engineering • 2022–2026",
   },
+
+  {
+    title: "Institution",
+    value: "Hindustan Institute of Technology and Science",
+    sub: "Chennai, Tamil Nadu",
+  },
+
   {
     title: "Specialization",
     value: "Full Stack Development",
-    sub: "Next.js • React • Node",
+    sub: "Next.js • React • Node.js",
   },
-  {
-    title: "AI & ML",
-    value: "Computer Vision",
-    sub: "YOLOv5 • Python",
-  },
+
   {
     title: "Location",
     value: "Chennai, India",
-    sub: "Open to Opportunities",
+    sub: "Open to Full-Time Opportunities",
   },
 ];
 
