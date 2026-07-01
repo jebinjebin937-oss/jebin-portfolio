@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +15,8 @@ export default function HorizontalScroll() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   useGSAP(() => {
     const section = sectionRef.current;
@@ -56,18 +58,52 @@ tl.to(track, {
     };
   }, []);
 
-  const scrollLeft = () => {
-  mobileTrackRef.current?.scrollBy({
+  useEffect(() => {
+  const container = mobileTrackRef.current;
+
+  if (!container) return;
+
+  updateButtons();
+
+  container.addEventListener("scroll", updateButtons);
+
+  return () => {
+    container.removeEventListener("scroll", updateButtons);
+  };
+}, []);
+
+  const updateButtons = () => {
+  const container = mobileTrackRef.current;
+  if (!container) return;
+
+  const maxScroll = container.scrollWidth - container.clientWidth;
+
+  setCanScrollLeft(container.scrollLeft > 5);
+  setCanScrollRight(container.scrollLeft < maxScroll - 5);
+};
+
+const scrollLeft = () => {
+  const container = mobileTrackRef.current;
+  if (!container || !canScrollLeft) return;
+
+  container.scrollBy({
     left: -350,
     behavior: "smooth",
   });
+
+  setTimeout(updateButtons, 350);
 };
 
 const scrollRight = () => {
-  mobileTrackRef.current?.scrollBy({
+  const container = mobileTrackRef.current;
+  if (!container || !canScrollRight) return;
+
+  container.scrollBy({
     left: 350,
     behavior: "smooth",
   });
+
+  setTimeout(updateButtons, 350);
 };
 
   return (
@@ -98,28 +134,35 @@ const scrollRight = () => {
   <div className="relative flex items-center">
 
   <button
-    onClick={scrollLeft}
-    className="
-      absolute
-      left-2
-      top-1/2
-      -translate-y-1/2
-      z-20
-      w-11
-      h-11
-      rounded-full
-      bg-white/80
-      backdrop-blur-md
-      hover:scale-110
-      transition-all
-      duration-300
-      shadow-lg
-      flex
-      items-center
-      justify-center
-    "
+  aria-label="Previous project"
+  onClick={scrollLeft}
+ className={`
+  absolute
+  left-2
+  top-1/2
+  -translate-y-1/2
+  z-20
+  w-11
+  h-11
+  rounded-full
+  backdrop-blur-md
+  shadow-lg
+  flex
+  items-center
+  justify-center
+  transition-all
+  duration-300
+  ${
+    canScrollLeft
+      ? "bg-white/80 hover:scale-110"
+      : "bg-white/40 opacity-50 cursor-not-allowed"
+  }
+`}
   >
-    <ChevronLeft size={20} />
+    <ChevronLeft
+  size={20}
+  aria-hidden="true"
+/>
   </button>
 
   <div
@@ -146,28 +189,35 @@ const scrollRight = () => {
   </div>
 
 <button
+  aria-label="Next project"
   onClick={scrollRight}
-  className="
-    absolute
-    right-2
-    top-1/2
-    -translate-y-1/2
-    z-20
-    w-11
-    h-11
-    rounded-full
-    bg-white/80
-    backdrop-blur-md
-    hover:scale-110
-    transition-all
-    duration-300
-    shadow-lg
-    flex
-    items-center
-    justify-center
-  "
+ className={`
+  absolute
+  right-2
+  top-1/2
+  -translate-y-1/2
+  z-20
+  w-11
+  h-11
+  rounded-full
+  backdrop-blur-md
+  shadow-lg
+  flex
+  items-center
+  justify-center
+  transition-all
+  duration-300
+  ${
+    canScrollRight
+      ? "bg-white/80 hover:scale-110"
+      : "bg-white/40 opacity-50 cursor-not-allowed"
+  }
+`}
 >
-  <ChevronRight size={20} />
+  <ChevronRight
+  size={20}
+  aria-hidden="true"
+/>
 </button>
 
 </div>

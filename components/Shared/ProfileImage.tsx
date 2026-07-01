@@ -21,7 +21,9 @@ export default function ProfileImage({
     >
       <Image
         src="/profile.jpg"
-        alt="Jebin"
+        alt="Portrait of Jebin"
+        priority
+        sizes="(max-width: 768px) 90vw, 40vw"
         fill
         className="object-cover"
       />

@@ -116,7 +116,8 @@ useEffect(() => {
 >
 
   <button
-    onClick={() => setResumeOpen(!resumeOpen)}
+  aria-label="Resume options"
+  onClick={() => setResumeOpen(!resumeOpen)}
     className="
       flex
       items-center
@@ -134,11 +135,12 @@ useEffect(() => {
   >
     Resume
     <ChevronDown
-      size={18}
-      className={`transition-transform ${
-        resumeOpen ? "rotate-180" : ""
-      }`}
-    />
+  size={18}
+  aria-hidden="true"
+  className={`transition-transform ${
+    resumeOpen ? "rotate-180" : ""
+  }`}
+/>
   </button>
 
   {resumeOpen && (
@@ -200,6 +202,7 @@ useEffect(() => {
 {/* Mobile Menu Button */}
 
 <button
+  aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
   onClick={() => setIsOpen(!isOpen)}
   className="md:hidden text-[#49225B]"
 >
