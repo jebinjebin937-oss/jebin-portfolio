@@ -40,25 +40,25 @@ export default function Skills() {
   className="
     mt-16 lg:mt-16 xl:mt-20
     flex
-    gap-5 lg:gap-6 xl:gap-8
+    gap-4 lg:gap-6 xl:gap-8
     overflow-x-auto
     pb-4
     snap-x
     snap-mandatory
     scroll-smooth
-    px-1
+    px-5
     [-ms-overflow-style:none]
     [scrollbar-width:none]
     [&::-webkit-scrollbar]:hidden
   "
 >
-          {skills.map((skill, index) => (
+          {skills.map((skill) => (
             <div
               key={skill.title}
               className="
-                w-[280px]
-                sm:w-[320px]
-                snap-center
+                w-[85%]
+                max-w-[320px]
+                snap-start
                 flex-shrink-0
               "
             >
@@ -66,7 +66,6 @@ export default function Skills() {
                 title={skill.title}
                 icon={skill.icon}
                 items={skill.items}
-                index={index}
               />
             </div>
           ))}

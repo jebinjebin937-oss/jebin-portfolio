@@ -1,50 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 
 interface SkillCardProps {
   title: string;
   icon: React.ElementType;
   items: {
-  name: string;
-  icon: React.ElementType;
-}[];
-  index: number;
+    name: string;
+    icon: React.ElementType;
+  }[];
 }
 
 export default function SkillCard({
   title,
   icon: Icon,
   items,
-  index,
+  
 }: SkillCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 120 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.15,
-      }}
-      whileHover={{
-        y: -4,
-        scale: 1.015,
-      }}
+    <div
       
       className="
-        rounded-[32px]
-        border
-        border-[#A56ABD]/20
-        bg-white/40
-        backdrop-blur-xl
-        p-6 lg:p-8
-        shadow-[0_20px_50px_rgba(73,34,91,0.08)]
-        transition-all
-        duration-150
-        ease-out
-        h-full
-      "
+  rounded-[32px]
+  border
+  border-[#A56ABD]/20
+  bg-white/40
+  backdrop-blur-xl
+  p-6 lg:p-8
+  shadow-[0_20px_50px_rgba(73,34,91,0.08)]
+  h-full
+  transition-all
+  duration-300
+  ease-out
+  hover:-translate-y-1
+  hover:scale-[1.015]
+"
     >
       {/* Icon */}
 
@@ -124,6 +114,6 @@ export default function SkillCard({
     );
   })}
 </div>
-    </motion.div>
+    </div>
   );
 }
