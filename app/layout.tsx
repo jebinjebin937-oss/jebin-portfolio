@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Jebin showcasing modern web applications.",
 
-   url: "https://your-domain.vercel.app",
+   url: "https://jebin-portfolio-ten.vercel.app",
 
   siteName: "Jebin Portfolio",
 
